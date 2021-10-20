@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">FinalProjectBCS430</string>
+    <string name="textViewEnterUserPass">Please Enter Your Email and Password, then click "Login"</string>
+    <string name="buttonLogin">Login</string>
+    <string name="textViewCreateAcc">If you do not already have an account, please click "Create An Account" below to get started!</string>
+    <string name="user_login">Email</string>
+    <string name="pass_login">Password</string>
+    <string name="button_create">Create An Account</string>
+    <string name="login_success">You have been successfully logged in</string>
+    <string name="login_fail">Login failed, please try again</string>
+    <string name="enter_user">Please enter an email address to be used for this account</string>
+    <string name="enter_pass">Please enter a password to be used for this account</string>
+    <string name="enter_full_name">First and Last Name</string>
+    <string name="up_progress">Check and Update Your Progress</string>
+    <string name="finish_pt">Register as a Personal Trainer</string>
+    <string name="finish_user">Register as a User</string>
+    <string name="facebook">Find a User On Facebook</string>
+    <string name="personal_data">Please fill out the data below, all data is optional and will be public!</string>
+    <string name="weight">Weight</string>
+    <string name="gender">Gender</string>
+    <string name="phone_num">Phone Number</string>
+    <string name="diet_pref">Diet Type/Preference</string>
+    <string name="pref_workout_time">Preferred Workout Time (Morning, Afternoon, Evening)</string>
+    <string name="facebook_username">Facebook Username</string>
+    <string name="warning">Before you register, your information will be public, please make sure your data is correct.</string>
+    <string name="finish_reg">Finish Registration</string>
+
+</resources>
