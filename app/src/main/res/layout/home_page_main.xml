@@ -10,14 +10,13 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to Agile"
+        android:text="Welcome!"
         android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="@color/purple_700"
         android:textAlignment="center"
         android:paddingTop="25dp"
         android:paddingBottom="25dp"
-        android:paddingLeft="50dp"
         android:background="@color/light_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -178,11 +177,11 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_dashbd"/>
+                        android:src="@drawable/ic_pt"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Item 5"
+                        android:text="Personal\nTrainer"
                         android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -207,7 +206,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Item 6"
+                        android:text="Dashboard"
                         android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
