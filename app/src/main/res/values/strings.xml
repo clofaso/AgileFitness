@@ -11,6 +11,11 @@
     <string name="enter_user">Please enter an email address to be used for this account</string>
     <string name="enter_pass">Please enter a password to be used for this account</string>
     <string name="enter_full_name">First and Last Name</string>
+    <string name="enter_first_name">First Name</string>
+    <string name="enter_last_name">Last Name</string>
+    <string name="availability">Availability</string>
+    <string name="pt_ex_pref">Exercise Preference</string>
+    <string name="certifications">Please list all Certifications</string>
     <string name="up_progress">Check and Update Your Progress</string>
     <string name="finish_pt">Register as a Personal Trainer</string>
     <string name="finish_user">Register as a User</string>

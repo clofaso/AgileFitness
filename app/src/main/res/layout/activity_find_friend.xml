@@ -7,15 +7,16 @@
     tools:context=".FindFriend">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find A Friend"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:background="@color/green"
         android:padding="25dp"
+        android:text="Find A Friend"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,5 +51,14 @@
                 android:icon="@drawable/ic_diet" />
         </com.google.android.material.tabs.TabLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFindFriend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
