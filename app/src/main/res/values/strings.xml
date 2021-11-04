@@ -27,7 +27,7 @@
     <string name="diet_pref">Diet Type/Preference</string>
     <string name="pref_workout_time">Preferred Workout Time (Morning, Afternoon, Evening)</string>
     <string name="facebook_username">Facebook Username</string>
-    <string name="warning">Before you register, please make sure your data is correct.\n REMINDER: Your information will be public</string>
+    <string name="warning">Before you register, please make sure your data is correct. Your information will be public!</string>
     <string name="finish_reg">Finish Registration</string>
 
 </resources>

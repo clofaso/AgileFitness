@@ -20,8 +20,8 @@ import java.util.Map;
 
 public class BuildAccountUser extends AppCompatActivity {
 
-    EditText gender, weight, firstName, lastName, phoneNum, workOutPref, faceUser, dietPref;
-    String g, w, fN, lN, pN, wP, fU, dP;
+    EditText firstName, lastName, weight, feet, inches, gender, phoneNum, workOutPref, faceUser, dietPref;
+    String fN, lN, w, ft, in, g, pN, wP, fU, dP;
     Button finishReg;
     FirebaseFirestore db;
     public static final String TAG = "YOUR-TAG-NAME";
@@ -36,8 +36,10 @@ public class BuildAccountUser extends AppCompatActivity {
 
         firstName = findViewById(R.id.editTextFirstName);
         lastName = findViewById(R.id.editTextLastName);
-        gender = findViewById(R.id.editTextUserGender);
         weight = findViewById(R.id.editTextUserWeight);
+        feet = findViewById(R.id.editTextUserHeightFt);
+        inches = findViewById(R.id.editTextUserHeightIn);
+        gender = findViewById(R.id.editTextUserGender);
         phoneNum = findViewById(R.id.editTextPhoneNum);
         workOutPref = findViewById(R.id.editTextPrefWorkout);
         faceUser = findViewById(R.id.editTextFaceUser);
@@ -54,23 +56,25 @@ public class BuildAccountUser extends AppCompatActivity {
                 fN = firstName.getText().toString();
                 lN = lastName.getText().toString();
                 w = weight.getText().toString();
+                ft = feet.getText().toString();
+                in = inches.getText().toString();
                 g = gender.getText().toString();
                 pN = phoneNum.getText().toString();
                 wP = workOutPref.getText().toString();
                 dP = dietPref.getText().toString();
                 fU = faceUser.getText().toString();
 
-                if (fN == "")
-                {
-                    fN = "Prefer Not to Say";
-                }
-                if (lN == "")
-                {
-                    lN = "Prefer Not to Say";
-                }
                 if (w == "")
                 {
                     w = "Prefer Not to Say";
+                }
+                if (ft == "")
+                {
+                    ft = "Prefer Not to Say";
+                }
+                if (in == "")
+                {
+                    in = "Prefer Not to Say";
                 }
                 if (g == " ")
                 {
@@ -98,6 +102,8 @@ public class BuildAccountUser extends AppCompatActivity {
                 user.put("Last Name", lN);
                 user.put("Email", intent.getStringExtra("EMAIL"));
                 user.put("Weight", w);
+                user.put("Height (Feet)", ft);
+                user.put("Height (Inches)", in);
                 user.put("Gender", g);
                 user.put("Phone Number", pN);
                 user.put("Preferred Workout Time", wP);
