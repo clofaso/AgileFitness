@@ -13,11 +13,11 @@
         android:text="Welcome!"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/dark_indigo"
         android:textAlignment="center"
-        android:paddingTop="25dp"
-        android:paddingBottom="25dp"
-        android:background="@color/light_blue"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@color/carolina_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,36 +35,41 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_weight="3"
-        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="2">
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true">
+                android:onClick="onClick"
+                app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_workout"/>
+                        android:src="@drawable/ic_workout" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -72,24 +77,29 @@
                         android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card2"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true">
+                android:onClick="onClick"
+                app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_diet"/>
+                        android:src="@drawable/ic_diet" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -98,30 +108,35 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="2">
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
-                android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:onClick="onClick">
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="onClick"
+                app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_people"/>
+                        android:src="@drawable/ic_people" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -129,24 +144,29 @@
                         android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card4"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true">
+                android:onClick="onClick"
+                app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_calendar"/>
+                        android:src="@drawable/ic_calendar" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -155,29 +175,35 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="2">
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card5"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true">
+                android:onClick="onClick"
+                app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_pt"/>
+                        android:src="@drawable/ic_pt" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -185,24 +211,29 @@
                         android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card6"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
+                android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true">
+                android:onClick="onClick"
+                app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_dashbd"/>
+                        android:src="@drawable/ic_dashbd" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -212,36 +243,5 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/navbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/ic_workout" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/ic_dashbd" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/ic_diet" />
-        </com.google.android.material.tabs.TabLayout>
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

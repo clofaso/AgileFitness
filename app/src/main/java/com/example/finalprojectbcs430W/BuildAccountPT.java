@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BuildAccountPT extends AppCompatActivity {
+
     EditText firstName, lastName, phoneNum, gender, availability, faceUser, prefExercise, certification;
     String fN, lN, pN, a, pE, fU, g, certifi;
     Button finishReg;
@@ -29,6 +30,9 @@ public class BuildAccountPT extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_build_pt);
+
+        //Pulling intent information from previous activity screen
+        Intent intent = getIntent();
 
         firstName = findViewById(R.id.editTextPTFirstName);
         lastName = findViewById(R.id.editTextPTLastName);
@@ -54,7 +58,6 @@ public class BuildAccountPT extends AppCompatActivity {
                 pE = prefExercise.getText().toString();
                 g = gender.getText().toString();
                 certifi = certification.getText().toString();
-
 
                 if (fN == "")
                 {
@@ -92,6 +95,7 @@ public class BuildAccountPT extends AppCompatActivity {
                 Map<String, Object> personalTrainer = new HashMap<>();
                 personalTrainer.put("First Name", fN);
                 personalTrainer.put("Last Name", lN);
+                personalTrainer.put("email", intent.getStringExtra("email"));
                 personalTrainer.put("Gender", g);
                 personalTrainer.put("Availability", a);
                 personalTrainer.put("Phone Number", pN);
@@ -100,27 +104,24 @@ public class BuildAccountPT extends AppCompatActivity {
                 personalTrainer.put("Facebook Username", fU);
 
                 db.collection("PersonalTrainer")
-                        .add(personalTrainer)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                    .add(personalTrainer)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
 
-                                Intent myIntent = new Intent(BuildAccountPT.this, MainHomePage.class);
-                                BuildAccountPT.this.startActivity(myIntent);
-                                finish();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error adding document", e);
-                            }
-                        });
-
-
+                            Intent myIntent = new Intent(BuildAccountPT.this, MainHomePage.class);
+                            BuildAccountPT.this.startActivity(myIntent);
+                            finish();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error adding document", e);
+                        }
+                    });
             }
         });
-
     }
 }

@@ -93,8 +93,8 @@ public class CreateAccount extends AppCompatActivity {
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                                 Intent myIntent = new Intent(CreateAccount.this, BuildAccountUser.class);
+                                myIntent.putExtra("EMAIL", userEmail);
                                 CreateAccount.this.startActivity(myIntent);
-                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -128,8 +128,8 @@ public class CreateAccount extends AppCompatActivity {
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                                 Intent myIntent = new Intent(CreateAccount.this, BuildAccountPT.class);
+                                myIntent.putExtra("EMAIL", userEmail);
                                 CreateAccount.this.startActivity(myIntent);
-                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

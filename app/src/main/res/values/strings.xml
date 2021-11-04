@@ -20,14 +20,14 @@
     <string name="finish_pt">Register as a Personal Trainer</string>
     <string name="finish_user">Register as a User</string>
     <string name="facebook">Find a User On Facebook</string>
-    <string name="personal_data">Please fill out the data below, all data is optional and will be public!</string>
+    <string name="personal_data">Please fill out the data below. All data is optional, but will be public!</string>
     <string name="weight">Weight</string>
     <string name="gender">Gender</string>
     <string name="phone_num">Phone Number</string>
     <string name="diet_pref">Diet Type/Preference</string>
     <string name="pref_workout_time">Preferred Workout Time (Morning, Afternoon, Evening)</string>
     <string name="facebook_username">Facebook Username</string>
-    <string name="warning">Before you register, your information will be public, please make sure your data is correct.</string>
+    <string name="warning">Before you register, please make sure your data is correct.\n REMINDER: Your information will be public</string>
     <string name="finish_reg">Finish Registration</string>
 
 </resources>

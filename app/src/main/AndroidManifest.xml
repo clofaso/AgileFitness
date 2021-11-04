@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProjectBCS430">
         <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".FindPersonalTrainer"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar"
+            android:exported="false" />
+        <activity
+            android:name=".NutritionLog"
+            android:exported="false" />
+        <activity
+            android:name=".WorkoutLog"
+            android:exported="false" />
+        <activity
             android:name=".FindFriend"
             android:exported="false" />
         <activity android:name=".MainActivity">

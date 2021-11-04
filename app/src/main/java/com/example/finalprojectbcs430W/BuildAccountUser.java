@@ -20,8 +20,8 @@ import java.util.Map;
 
 public class BuildAccountUser extends AppCompatActivity {
 
-    EditText gender, weight, fullName, phoneNum, workOutPref, faceUser, dietPref;
-    String g, w, fN, pN, wP, fU, dP;
+    EditText gender, weight, firstName, lastName, phoneNum, workOutPref, faceUser, dietPref;
+    String g, w, fN, lN, pN, wP, fU, dP;
     Button finishReg;
     FirebaseFirestore db;
     public static final String TAG = "YOUR-TAG-NAME";
@@ -31,9 +31,13 @@ public class BuildAccountUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_build_user);
 
+        //Pulling intent information from previous activity screen
+        Intent intent = getIntent();
+
+        firstName = findViewById(R.id.editTextFirstName);
+        lastName = findViewById(R.id.editTextLastName);
         gender = findViewById(R.id.editTextUserGender);
         weight = findViewById(R.id.editTextUserWeight);
-        fullName = findViewById(R.id.editTextFullName);
         phoneNum = findViewById(R.id.editTextPhoneNum);
         workOutPref = findViewById(R.id.editTextPrefWorkout);
         faceUser = findViewById(R.id.editTextFaceUser);
@@ -47,13 +51,23 @@ public class BuildAccountUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                fN = fullName.getText().toString();
+                fN = firstName.getText().toString();
+                lN = lastName.getText().toString();
                 w = weight.getText().toString();
                 g = gender.getText().toString();
                 pN = phoneNum.getText().toString();
                 wP = workOutPref.getText().toString();
                 dP = dietPref.getText().toString();
                 fU = faceUser.getText().toString();
+
+                if (fN == "")
+                {
+                    fN = "Prefer Not to Say";
+                }
+                if (lN == "")
+                {
+                    lN = "Prefer Not to Say";
+                }
                 if (w == "")
                 {
                     w = "Prefer Not to Say";
@@ -79,9 +93,10 @@ public class BuildAccountUser extends AppCompatActivity {
                     fU = "Prefer Not to Say";
                 }
 
-
                 Map<String, Object> user = new HashMap<>();
-                user.put("name", fN);
+                user.put("First Name", fN);
+                user.put("Last Name", lN);
+                user.put("Email", intent.getStringExtra("EMAIL"));
                 user.put("Weight", w);
                 user.put("Gender", g);
                 user.put("Phone Number", pN);
@@ -89,26 +104,24 @@ public class BuildAccountUser extends AppCompatActivity {
                 user.put("Diet Preference", dP);
                 user.put("Facebook Username", fU);
 
-
                 db.collection("user")
-                        .add(user)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                    .add(user)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
 
-                                Intent myIntent = new Intent(BuildAccountUser.this, MainHomePage.class);
-                                BuildAccountUser.this.startActivity(myIntent);
-                                finish();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error adding document", e);
-                            }
-                        });
-
+                            Intent myIntent = new Intent(BuildAccountUser.this, MainHomePage.class);
+                            BuildAccountUser.this.startActivity(myIntent);
+                            finish();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error adding document", e);
+                        }
+                    });
             }
         });
     }
